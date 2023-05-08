@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --config .eslintrc.json --cache",
+    "prettier": "prettier -c . --config .prettierrc.json",
     "prepare": "husky install"
   },
   "engines": {
