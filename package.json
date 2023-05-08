@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "pnpm clean && pnpm build && jest --no-cache",
     "lint": "eslint . --config .eslintrc.json --cache",
     "prettier": "prettier -c . --config .prettierrc.json",
+    "format": "prettier -w . --config .prettierrc.json",
+    "start": "pnpm clean && pnpm build && pnpm execute",
+    "clean": "rimraf build coverage cache",
+    "build": "tsc && tsc-alias",
+    "execute": "node build/index.js",
+    "coverage": "typescript-coverage-report -o coverage",
+    "mirror-config": "node scripts/mirror-config.js",
     "prepare": "husky install"
   },
   "engines": {
@@ -16,12 +23,18 @@
   "keywords": [
     "fancy-project"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mahdikhashan/ts-base-project.git"
+  },
   "author": "Mahdi Khashan",
   "license": "MIT",
   "dependencies": {
     "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4"
   }
 }
