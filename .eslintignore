@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+dist
+build
+coverage
+cache
+pnpm-lock.yaml
+scripts
