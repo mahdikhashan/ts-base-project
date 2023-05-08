@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18",
@@ -17,5 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
   }
 }
